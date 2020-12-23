@@ -20,6 +20,8 @@
 #define ERROR_POP 6
 #define ERROR_SWAP 7
 #define ERROR_ADD 8
+#define ERROR_MOD 13
+#define ERROR_STACK_EMPTY 14
 
 #define TRUE (1 == 1)
 #define FALSE (!TRUE)
