@@ -1,6 +1,8 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
+/* ----- c std lib headers ----- */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -11,11 +13,15 @@
 #include <string.h>
 #include <ctype.h>
 
+/* ----- macros ----- */
+
 #define TRUE (1 == 1)
 #define FALSE (!TRUE)
 #define BUFSIZE 1024
 #define LIFO 1
 #define FIFO 0
+
+/* ----- ERRORS ----- */
 
 #define ERROR_MALLOC 0
 #define ERROR_USAGE_FILE 1
@@ -33,6 +39,8 @@
 #define ERROR_MOD 13
 #define ERROR_STACK_EMPTY 14
 #define ERROR_PCHAR_RANGE 15
+
+/* ----- Structs ----- */
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -85,19 +93,29 @@ typedef struct inventory_s
 	int order;
 } inventory_t;
 
+/* ----- glbal ----- */
+
 extern inventory_t *inventory;
 inventory_t *inventory;
 
+/* ------Built Inventory -------*/
+
 int build_inventory(void);
+
+/* ----- Add to Stack ----- */
 
 void add_node_lifo(stack_t **stack, stack_t *new_node);
 void add_node_fifo(stack_t **stack, stack_t *new_node);
 void _push(stack_t **stack, unsigned int line_number);
 
+/* ----- Stack ----- */
+
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
+
+/* ----- Stack 2 ----- */
 
 void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
@@ -105,19 +123,29 @@ void _sub(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
 
+/* ---- Stack 3 ----- */
+
 void _mod(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
 void _rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
 
+/* ---- Stack 4 ---- */
+
 void _stack(stack_t **stack, unsigned int line_number);
 void _queue(stack_t **stack, unsigned int line_number);
 
+/* --------- Integer ----------*/
+
 int are_digits(char *num);
+
+/* ----- Execute ------ */
 
 void (*match_opcode(void))(stack_t **stack, unsigned int line_number);
 int parse_line(char *line);
+
+/* ----- Finish ----- */
 
 void free_all(void);
 void free_stack(void);
