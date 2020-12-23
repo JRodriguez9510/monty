@@ -11,7 +11,9 @@
 #include <string.h>
 #include <ctype.h>
 
-
+#define ERROR_MALLOC 0
+#define ERROR_USAGE_FILE 1
+#define ERROR_OPEN_FILE 2
 #define ERROR_UNKNOWN 3
 #define ERROR_PUSH 4
 #define ERROR_PINT 5
@@ -69,6 +71,9 @@ typedef struct inventory_s
 	FILE *file;
 	int order;
 } inventory_t;
+
+extern inventory_t *inventory;
+inventory_t *inventory;
 
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
