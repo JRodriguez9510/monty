@@ -1,5 +1,5 @@
-#ifndef __MONTY.H__ 
-#define __MONTY.H__
+#ifndef _MONTY_H_ 
+#define _MONTY_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -82,6 +82,8 @@ typedef struct inventory_s
 
 extern inventory_t *inventory;
 inventory_t *inventory;
+
+int build_inventory(void);
 
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
