@@ -93,4 +93,8 @@ void _swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 
+void free_all(void);
+void free_stack(void);
+void handle_errors(int e);
+
 #endif
