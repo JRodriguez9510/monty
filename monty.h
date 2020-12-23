@@ -21,6 +21,12 @@
 #define ERROR_SWAP 7
 #define ERROR_ADD 8
 
+#define TRUE (1 == 1)
+#define FALSE (!TRUE)
+#define BUFSIZE 1024
+#define LIFO 1
+#define FIFO 0
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
