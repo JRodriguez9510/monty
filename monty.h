@@ -85,7 +85,6 @@ inventory_t *inventory;
 
 int build_inventory(void);
 
-void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
@@ -99,5 +98,9 @@ int parse_line(char *line);
 void free_all(void);
 void free_stack(void);
 void handle_errors(int e);
+
+void add_node_lifo(stack_t **stack, stack_t *new_node);
+void add_node_fifo(stack_t **stack, stack_t *new_node);
+void _push(stack_t **stack, unsigned int line_number);
 
 #endif
